@@ -1,9 +1,9 @@
-# zgrad
+# picograd
 
 A tiny reverse-mode automatic differentiation engine, reimplemented from scratch
 to understand how PyTorch's `autograd` works under the hood.
 
-`zgrad` builds a dynamic computation graph over scalar values, then backpropagates
+`picograd` builds a dynamic computation graph over scalar values, then backpropagates
 gradients through it via the chain rule — the same core idea that powers every
 deep learning framework. Inspired by Andrej Karpathy's
 [micrograd](https://github.com/karpathy/micrograd).
@@ -18,7 +18,7 @@ foundations (Neural Networks: Zero to Hero).
 ## Example
 
 ```python
-from zgrad import Value
+from picograd import Value
 
 a = Value(2.0)
 b = Value(-3.0)
@@ -42,8 +42,8 @@ print(b.grad)        # d(d)/d(b) = a =  2.0
 ## Layout
 
 ```
-zgrad/
-├── zgrad/
+picograd/
+├── picograd/
 │   ├── __init__.py
 │   ├── engine.py     # core autograd: the Value class
 │   └── nn.py         # neural net building blocks (Neuron / Layer / MLP)
@@ -56,7 +56,7 @@ zgrad/
 
 ## Install / Run
 
-Install as an editable package (then `import zgrad` works anywhere):
+Install as an editable package (then `import picograd` works anywhere):
 
 ```bash
 pip install -e .

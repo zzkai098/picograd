@@ -6,7 +6,7 @@ xfail/skip until you implement the corresponding ops and backward().
 
 import pytest
 
-from zgrad import Value
+from picograd import Value
 
 
 def test_add_forward():

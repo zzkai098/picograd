@@ -1,6 +1,6 @@
 """Core autograd engine: a scalar Value that tracks its computation graph.
 
-This is the heart of zgrad. A `Value` wraps a single number and remembers the
+This is the heart of picograd. A `Value` wraps a single number and remembers the
 operation that produced it, so gradients can flow backward through the graph via
 the chain rule.
 

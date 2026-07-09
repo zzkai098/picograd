@@ -1,6 +1,6 @@
 """Minimal demo: build a graph and (once backward is implemented) read gradients."""
 
-from zgrad import Value
+from picograd import Value
 
 
 def main():
