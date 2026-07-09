@@ -56,11 +56,18 @@ zgrad/
 
 ## Install / Run
 
-Run from the repo root:
+Install as an editable package (then `import zgrad` works anywhere):
+
+```bash
+pip install -e .
+python3 examples/demo.py
+python3 -m pytest        # run tests
+```
+
+Or run without installing, from the repo root:
 
 ```bash
 PYTHONPATH=. python3 examples/demo.py
-PYTHONPATH=. python3 -m pytest    # run tests
 ```
 
 ## License

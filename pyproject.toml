@@ -1,0 +1,20 @@
+[project]
+name = "zgrad"
+version = "0.1.0"
+description = "A tiny reverse-mode automatic differentiation engine built from scratch, inspired by micrograd."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Zhankai Zhang" }]
+keywords = ["autograd", "automatic-differentiation", "deep-learning", "backpropagation", "micrograd"]
+
+[project.urls]
+Homepage = "https://github.com/zzkai098/zgrad"
+Repository = "https://github.com/zzkai098/zgrad"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["zgrad"]
