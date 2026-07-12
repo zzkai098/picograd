@@ -8,6 +8,20 @@ gradients through it with the chain rule — the same core mechanism behind PyTo
 lines, fully gradient-checked. Inspired by Andrej Karpathy's
 [micrograd](https://github.com/karpathy/micrograd).
 
+<table>
+<tr>
+<td><img src="assets/mlp_architecture.png" width="380"></td>
+<td><img src="assets/decision_boundary.png" width="380"></td>
+</tr>
+<tr>
+<td align="center"><sub>An MLP built from scalar <code>Value</code>s</sub></td>
+<td align="center"><sub>...trained to separate a nonlinear class boundary (99% acc)</sub></td>
+</tr>
+</table>
+
+Full walkthrough in [`examples/train_mlp.ipynb`](examples/train_mlp.ipynb) — build the
+network, train it with gradient descent, and visualize what it learned.
+
 ## Install
 
 Install directly from GitHub:
