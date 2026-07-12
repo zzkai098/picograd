@@ -70,8 +70,8 @@ print(x.grad, y.grad)   # exact analytic gradients
 
 ### Train a neural net
 
-The `nn` module stacks `Value`s into a small MLP you can train by hand — this is the
-code behind the figures above:
+The `nn` module stacks `Value`s into a small MLP you can train by hand — a compact
+version of the training loop behind the figures above:
 
 ```python
 import random
@@ -146,7 +146,11 @@ picograd/
 │   ├── engine.py     # core autograd: the Value class
 │   └── nn.py         # neural net building blocks (Neuron / Layer / MLP)
 ├── tests/
-│   └── test_engine.py
+│   ├── test_engine.py   # forward, gradient check, accumulation
+│   └── test_nn.py       # structure, activations, training convergence
+├── examples/
+│   └── train_mlp.ipynb  # build + train an MLP, plot the decision boundary
+├── assets/              # figures used in this README
 └── README.md
 ```
 
