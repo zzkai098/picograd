@@ -68,6 +68,42 @@ z.backward()
 print(x.grad, y.grad)   # exact analytic gradients
 ```
 
+### Train a neural net
+
+The `nn` module stacks `Value`s into a small MLP you can train by hand — this is the
+code behind the figures above:
+
+```python
+import random
+from picograd import Value
+from picograd.nn import MLP
+
+# toy dataset: inside the unit circle -> +1, outside -> -1
+random.seed(1)
+xs, ys = [], []
+for _ in range(60):
+    a, b = random.uniform(-2, 2), random.uniform(-2, 2)
+    xs.append([a, b]); ys.append(1.0 if a*a + b*b < 1.0 else -1.0)
+
+model = MLP(2, [8, 8, 1], activation='tanh')
+
+for k in range(80):
+    ypred = [model(x) for x in xs]
+    loss = sum(((y - p)**2 for y, p in zip(ys, ypred)), Value(0.0)) / len(ys)
+
+    model.zero_grad()          # reset gradients (they accumulate)
+    loss.backward()            # backprop through the whole network
+    for p in model.parameters():
+        p.data -= 0.2 * p.grad  # gradient-descent step
+
+    if k % 20 == 0:
+        acc = sum((p.data > 0) == (y > 0) for y, p in zip(ys, ypred)) / len(ys)
+        print(f"step {k:2d}  loss {loss.data:.3f}  acc {acc:.0%}")
+```
+
+See [`examples/train_mlp.ipynb`](examples/train_mlp.ipynb) for the full version with
+data generation and decision-boundary plots.
+
 ## Features
 
 - Scalar `Value` autograd node with a dynamically-built computation graph
