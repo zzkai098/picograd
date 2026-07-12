@@ -16,3 +16,8 @@ env/
 .DS_Store
 .vscode/
 .idea/
+
+# Early practice / scratch files
+test.ipynb
+test.py
+try.ipynb
