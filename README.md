@@ -10,11 +10,13 @@ lines, fully gradient-checked. Inspired by Andrej Karpathy's
 
 ## Install
 
+Install directly from GitHub:
+
 ```bash
-pip install picograd
+pip install git+https://github.com/zzkai098/picograd.git
 ```
 
-Or install from source in editable mode:
+Or clone and install in editable mode for development:
 
 ```bash
 git clone https://github.com/zzkai098/picograd.git
